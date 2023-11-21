@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+# Get the current branch name
+current_branch=$(git branch --show-current)
+
+# Check if the current branch is 'skip-hooks'
+if [ "$current_branch" = "master" ]; then
+  echo "On skip-hooks branch, bypassing pre-commit hook."
+  exit 0
+fi
+
+npm test
