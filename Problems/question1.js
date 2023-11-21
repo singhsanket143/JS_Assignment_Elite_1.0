@@ -6,8 +6,8 @@
  * 
  */
 
-function fun() {
-    return true;
+function functionLength(fn) {
+    throw 'Not implemented';
 }
 
-module.exports = fun
+module.exports = functionLength
