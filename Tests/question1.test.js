@@ -1,5 +1,4 @@
-const functionLength = require('../Problems/question1')
-
+import functionLength from "../Problems/question1";
 describe('functionLength', () => {
   test('no arguments', () => {
     expect(functionLength(function foo() {})).toBe(0);
