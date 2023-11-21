@@ -7,7 +7,7 @@
  */
 
 function fun() {
-    return true;
+    return true; //
 }
 
 module.exports = fun
