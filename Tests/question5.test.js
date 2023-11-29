@@ -1,4 +1,5 @@
-import deepEqual from './deep-equal';
+import deepEqual from '../Problems/question5';
+// import deepEqual from './deep-equal';
 
 describe('deepEqual', () => {
   test('primitive values', () => {
