@@ -43,6 +43,6 @@ sleep(2000).then(() => {
  * @param {number} duration
  * @return {Promise<void>}
  */
-export default async function sleep(duration) {
-    throw 'Not implemented';
-  }
+export default function sleep(duration) {
+  return new Promise((resolve) => setTimeout(resolve, duration));
+}
