@@ -20,5 +20,23 @@
  */
 
 export default function makeCounter(initialValue = 0) {
-    throw 'Not implemented';
+    let value = initialValue;
+
+    //inner Function
+    return function () {
+        return value++;
+        
+    };
 }
+
+// Creating a counter with default initial value (0)
+const counter = makeCounter(6);
+console.log(counter()); // Output: 0
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+
+// Creating a counter with a custom initial value (7)
+const counterCustom = makeCounter(7);
+console.log(counterCustom()); // Output: 7
+console.log(counterCustom()); // Output: 8
+console.log(counterCustom()); // Output: 9

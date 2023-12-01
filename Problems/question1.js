@@ -14,6 +14,14 @@
     functionLength(baz); // 2
  */
 
-export default function functionLength(fn) {
-    throw 'Not implemented';
-}
+    export default function functionLength(fn) {
+        if (typeof fn !== 'function') {
+            throw new Error('Please provide a valid function');
+        }
+        // returning the function length 
+        return fn.length;
+    }
+
+function fun1() {}
+function fun2(a) {}
+function fun3(c, d) {}

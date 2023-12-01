@@ -27,5 +27,17 @@ Read more about it here: https://lodash.com/docs/#chunk
  * @returns {Array<Array<T>>} The new array of chunks.
  */
 export default function chunk(array, size = 1) {
-    throw 'Not implemented!';
-  }
+    if (!Array.isArray(array) || array.length === 0) {
+        return [];
+      }
+    
+      const myArray = [];
+      let index = 0;
+    
+      while (index < array.length) {
+       myArray.push(array.slice(index, index + size));
+        index += size;
+      }
+    
+      return myArray;
+    }
