@@ -20,5 +20,51 @@ Examples
  * @return {boolean}
  */
 export default function deepEqual(valueA, valueB) {
-    throw 'Not implemented!';
+  if (valueA === valueB) {
+    return true;
+ }
+
+  // Check if values are not objects or null
+  if (typeof valueA !== 'object' || typeof valueB !== 'object' || valueA === null || valueB === null) {
+    return false;
   }
+
+  // Check if one value is an array and the other is not
+  if (Array.isArray(valueA) !== Array.isArray(valueB)) {
+    return false;
+  }
+
+  // If values are arrays
+  if (Array.isArray(valueA)) {
+    // Check if arrays have different lengths
+    if (valueA.length !== valueB.length) {
+      return false;
+    }
+    // Recursively compare each element of the arrays
+    for (let i = 0; i < valueA.length; i++) {
+      if (!deepEqual(valueA[i], valueB[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // If values are objects
+  const keysA = Object.keys(valueA);
+  const keysB = Object.keys(valueB);
+
+  // Check if objects have different numbers of keys
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  // Recursively compare each key-value pair in the objects
+  for (let key of keysA) {
+    if (!keysB.includes(key) || !deepEqual(valueA[key], valueB[key])) {
+      return false;
+    }
+  }
+
+  // If all checks pass, values are deeply equal
+  return true;
+}
