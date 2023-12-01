@@ -1,5 +1,7 @@
 # Steps to attempt the assignment:
 
+0. For this repository, and then follow the remaining steps with your forked repo.
+
 1. Clone the repository
 
 ```
