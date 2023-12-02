@@ -20,5 +20,12 @@
  */
 
 export default function makeCounter(initialValue = 0) {
-    throw 'Not implemented';
+     
+    function counter(){
+         
+        //Here we use the Post increment operator after returing the initialValue we Increment it by one 
+        // All this possible  because of closure  
+        return initialValue++;
+    }
+    return counter;
 }

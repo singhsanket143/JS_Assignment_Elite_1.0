@@ -14,6 +14,9 @@
     functionLength(baz); // 2
  */
 
-export default function functionLength(fn) {
-    throw 'Not implemented';
-}
+    export default function functionLength(fn) {
+    
+        // here we use the lenght property of function oject 
+           return fn.length;
+          
+       }
