@@ -20,5 +20,7 @@ Examples
  * @return {boolean}
  */
 export default function deepEqual(valueA, valueB) {
-    throw 'Not implemented!';
-  }
+  let value1 = JSON.stringify(valueA).trim()
+  let value2 = JSON.stringify(valueB).trim()
+  return value1 === value2
+}
